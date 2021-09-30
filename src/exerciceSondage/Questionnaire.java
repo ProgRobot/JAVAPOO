@@ -1,27 +1,22 @@
 package exerciceSondage;
 
-public class Sondage {
+public class Questionnaire {
 	
 	private int nombreChoix;
 	private String question;
+	private String[] reponses;
 	
-	
-	
-	private void afficheQuestionnaire() {
-		
-		
-		
-		
-		
+	public void afficheQuestionnaire() {
+		System.out.println(this.question);
+		for(int i=0;i < reponses.length;i++) {
+			System.out.println(((i+1)+" - "+reponses[i]));
+		}
 	}
 	
-	
-	
-	
-	
-	public Sondage(int numQuestion, String question) {
+	public Questionnaire(int numQuestion, String question) {
 		this.nombreChoix = numQuestion;
 		this.question = question;
+		this.reponses = new String[nombreChoix];
 	}
 
 	public int getNumQuestion() {
@@ -38,6 +33,10 @@ public class Sondage {
 
 	public void setQuestion(String question) {
 		this.question = question;
+	}
+
+	public void setReponses(String[] reponses) {
+		this.reponses = reponses;
 	}
 	
 }
